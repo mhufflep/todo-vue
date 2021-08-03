@@ -1,4 +1,4 @@
-# sample
+# ToDo app
 
 ## Project setup
 ```
@@ -10,10 +10,15 @@ npm install
 npm run serve
 ```
 
+### Run developer server for frontend-part (json-server)
+```
+npm run jsv
+```
+
+If you want to change server's location you should </br>
+configure `package.json` and `vue.config.js` files.
+
 ### Compiles and minifies for production
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
