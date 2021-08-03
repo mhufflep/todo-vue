@@ -1,37 +1,27 @@
 <template>
-    <div class="container">
+	<div class="container">
         <Header 
 			@add-form-toggle="onAddFormToggle"
 			title="ToDo List"
 			:buttonStates="headerButtonStates"
 		/>
-        <AddTask
-			v-if="addFormOpened" 
-			@add-task="onAddTask"
-		/>
-		<Tasks
-			@delete-task="onDeleteTask"
-			@toggle-reminder="onToggleReminder"
-			:tasks="tasks"
-		/>
-    </div>
+		<router-view :formOpened="addFormOpened"></router-view>
+		<Footer />
+	</div>
 </template>
 
 <script>
 import Header from "./components/Header"
-import Tasks from "./components/Tasks"
-import AddTask from "./components/AddTask"
+import Footer from "./components/Footer"
 
 export default {
     name: "App",
     components: {
-		AddTask,
-        Header,
-        Tasks,
+		Header,
+		Footer,
     },
     data: () => ({
 		addFormOpened: false,
-		tasks: [],
 		headerButtonStates: {
 			OnTitle: 'Add task',
 			OnColor: 'green',
@@ -40,49 +30,10 @@ export default {
 		}
     }),
 	methods: {
-		onAddFormToggle() {
+		onAddFormToggle() {	
 			this.addFormOpened = !this.addFormOpened;
-		},
-		onDeleteTask(id) {
-			if (confirm('are you sure?'))
-			{
-				this.tasks = this.tasks.filter(
-					(task) => task.id !== id
-				);
-			}
-		},
-		onToggleReminder(id) {
-			this.tasks.forEach((task) => {
-				if (task.id === id)
-					task.reminder = !task.reminder;
-			});
-		},
-		async onAddTask(newTask) {
-			const res = await fetch(`/api/tasks`, {
-				method: "POST",
-				headers: {
-					'Content-type': "application/json"
-				},
-				body: JSON.stringify(newTask)
-			});
-
-			const data = await res.json();
-			this.tasks.push(data);
-		},
-		async fetchTasks() {
-			const res = await fetch('/api/tasks');
-			const data = await res.json();
-			return data
-		},
-		async fetchTask(id) {
-			const res = await fetch(`/api/tasks/${id}`);
-			const data = await res.json();
-			return data
 		}
-	},
-    async created() {
-        this.tasks = await this.fetchTasks()
-    },
+	}
 };
 </script>
 

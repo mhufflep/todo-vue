@@ -5,6 +5,7 @@
 		@click="onClick()"
 		:text="text"
 		:color="color"
+		v-show="isHome"
 	/>
   </header>
 </template>
@@ -48,6 +49,11 @@ export default {
 			this.color = buttonOn ? 'green' : 'black';
 		}
 	},
+	computed: {
+		isHome() {
+			return (this.$route.path === '/');
+		}
+	}
 }
 </script>
 
