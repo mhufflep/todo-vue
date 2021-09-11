@@ -1,34 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "text": "Go to the doctor",
-      "day": "March 1st at 2:30pm",
-      "reminder": false
-    },
-    {
-      "id": 2,
-      "text": "Buy a gift for friend",
-      "day": "March 2nd at 3:30pm",
-      "reminder": false
-    },
-    {
-      "id": 3,
-      "text": "Go to the library",
-      "day": "March 3rd at 4:30pm",
-      "reminder": false
-    },
-    {
-      "id": 35563,
-      "text": "sdfds",
-      "day": "sadafs",
-      "reminder": false
-    },
-    {
-      "id": 4936,
-      "text": "sdfd",
-      "day": "sdfds",
-      "reminder": false
-    }
-  ]
+  "tasks": []
 }

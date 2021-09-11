@@ -7,7 +7,7 @@
 
 <script>
 	export default {
-		
+		name: 'Footer'
 	}
 </script>
 
@@ -15,7 +15,7 @@
 	a {
 		color:#333;
 	}
-
+	
 	footer {
 		text-align: center;
 		margin-top: 30px;

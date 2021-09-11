@@ -24,18 +24,17 @@ export default {
 
 <style scope>
 	.task {
-		/*font-size: 1rem;*/
-		background: rgb(221, 221, 221);
+		color: #fafafa;
+		background:#3f3f3f;
 		margin: 5px;
 		padding: 10px 20px;
-		/*cursor: pointer; /* <--- what this fucker does? */
-		/*border: 1px solid rgb(61, 61, 61);*/
+		border-radius: 5px;
 	}
 
-	.task.reminder
-	{
-		border-left: 5px solid green;
+	.task.reminder {
+		border-left: 5px solid #2e772e;
 	}
+
 	.task h3 {
 		display: flex;
 		align-items: center;

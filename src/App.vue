@@ -1,12 +1,14 @@
 <template>
-	<div class="container">
-        <Header 
-			@add-form-toggle="onAddFormToggle"
-			title="ToDo List"
-			:buttonStates="headerButtonStates"
-		/>
-		<router-view :formOpened="addFormOpened"></router-view>
-		<Footer />
+	<div class="app-wrap">
+		<div class="container">
+	        <Header 
+				@add-form-toggle="onAddFormToggle"
+				title="ToDo List"
+				:buttonStates="headerButtonStates"
+			/>
+			<router-view :formOpened="addFormOpened"></router-view>
+			<Footer />
+		</div>
 	</div>
 </template>
 
@@ -24,9 +26,9 @@ export default {
 		addFormOpened: false,
 		headerButtonStates: {
 			OnTitle: 'Add task',
-			OnColor: 'green',
+			OnColor: '#2e772e',
 			OffTitle: 'Close',
-			OffColor: 'black'
+			OffColor: '#3f3f3f'
 		}
     }),
 	methods: {
@@ -47,13 +49,23 @@ export default {
   padding: 0;
 }
 
+.app-wrap {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
 
 .container {
-  max-width: 500px;
-  padding: 30px;
+	width: 40vw;
+	background-color: rgb(233, 233, 233);
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 10px;
 }
 
 </style>

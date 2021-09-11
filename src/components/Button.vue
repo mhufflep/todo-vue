@@ -1,5 +1,4 @@
 <template>
-	<!-- How does this work -->
 	<button
 		:style="{background: color}"
 		@click="$emit('btn-clicked')"

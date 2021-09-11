@@ -1,6 +1,6 @@
 <template>
 	<AddTask
-		v-show="addFormOpened" 
+		v-if="formOpened" 
 		@add-task="onAddTask"
 	/>
 	<Tasks
@@ -21,7 +21,7 @@ export default {
 		AddTask,
 	},
 	props: {
-		addFormOpened: Boolean,
+		formOpened: Boolean,
 	},
 	data: () => ({
 		tasks: []
